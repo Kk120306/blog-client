@@ -3,6 +3,7 @@ import NavBar from './components/NavBar'
 import { Outlet } from 'react-router-dom'
 import { Toaster } from "sonner";
 import { AuthProvider } from './context/AuthContext';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
                     <Outlet />
                 </main>
             </AuthProvider>
-            {/* <Footer /> */}
+            <Footer />
             <Toaster position="top-right" richColors />
             {/* TODO : modify position and style */}
         </div>
