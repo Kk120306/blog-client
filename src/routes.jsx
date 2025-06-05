@@ -3,6 +3,7 @@ import ErrorPage from './components/ErrorPage';
 import Home from './components/Home.jsx';
 import Signin from './components/Signin.jsx';
 import Signup from './components/Signup.jsx';
+import About from './components/About.jsx';
 
 const routes = [
     {
@@ -21,6 +22,10 @@ const routes = [
             {
                 path: "/signup",
                 element: <Signup />
+            },
+            {
+                path : "/about",
+                element: <About />
             }
         ]
     },

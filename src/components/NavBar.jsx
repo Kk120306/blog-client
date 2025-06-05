@@ -51,7 +51,9 @@ const NavBar = () => {
                         </li>
                     ))}
                     {isAuthenticated && <li key="signout">
-                        <button onClick={() => {
+                        <button 
+                         className="text-sm hover:underline"
+                         onClick={() => {
                             logout();
                         }}>Sign out</button>
                     </li>}
@@ -72,7 +74,9 @@ const NavBar = () => {
                         </li>
                     ))}
                     {isAuthenticated && <li key="signout">
-                        <button onClick={() => {
+                        <button 
+                         className="text-sm hover:underline"
+                         onClick={() => {
                             logout();
                             setIsOpen(false);
                         }}>Sign out</button>
