@@ -1,11 +1,49 @@
+import Hero from './Hero';
+import useFetch from '../utils/useFetch';
+import { Typewriter } from 'react-simple-typewriter';
+import PostCard from './PostCard';
 
 const Home = () => {
+    const { data, loading, error } = useFetch('/home/blog?limit=3');
+
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">Welcome to My App</h1>
-            <p className="text-gray-700">
-                This is the home page of your application. You can add more content here.
-            </p>
+        <div>
+            <Hero />
+            <div>
+                <h2 className="text-3xl font-bold text-center mt-8">Latest Posts</h2>
+                <p className="text-center mt-4">Discover the latest insights and trends in our blog.</p>
+
+                {loading && (
+                    <p className="font-semibold font-mono text-center mt-20">
+                        Loading
+                        <Typewriter
+                            words={["..."]}
+                            loop={0}
+                            cursor
+                            cursorStyle=""
+                            typeSpeed={100}
+                        />
+                    </p>
+                )}
+
+                {error && (
+                    <p className="text-red-500 text-center mt-4">
+                        Error: {error.message}
+                    </p>
+                )}
+
+                {data?.post?.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                        {data.post.map((post, index) => (
+                            <PostCard post={post} key={index} index={index} />
+                        ))}
+                    </div>
+                ) : (
+                    <div>
+                        <p className="text-center mt-8">No posts available.</p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

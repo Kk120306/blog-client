@@ -11,8 +11,8 @@ export const AuthProvider = ({ children }) => {
 
     const login = async () => {
         try {
-            const data = await api.get("user/data");
-            setUser(data.authorizedData);
+            const response = await api.get("user/data");
+            setUser(response.data.authorizedData);
             setIsAuthenticated(true);
         } catch (error) {
             if (error.response?.status !== 403) {
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
             toast.success('Logged out successfully');
         }
     }
-    
+
     useEffect(() => {
         login();
     }, []);
