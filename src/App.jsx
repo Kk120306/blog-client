@@ -1,0 +1,24 @@
+import './App.css'
+import NavBar from './components/NavBar'
+import { Outlet } from 'react-router-dom'
+import { Toaster } from "sonner";
+import { AuthProvider } from './context/AuthContext';
+
+function App() {
+
+    return (
+        <div className="min-h-screen flex flex-col">
+            <AuthProvider>
+                <NavBar />
+                <main className="flex-grow">
+                    <Outlet />
+                </main>
+            </AuthProvider>
+            {/* <Footer /> */}
+            <Toaster position="top-right" richColors />
+            {/* TODO : modify position and style */}
+        </div>
+    )
+}
+
+export default App
