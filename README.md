@@ -12,7 +12,6 @@ A React-based frontend client for the blogging platform, designed to interact se
 * Uses JWT tokens stored in **HTTP-only cookies** for secure authentication with the backend
 * Fetches and displays blog data from the REST API backend
 * Supports creating, editing, and deleting blog posts (authenticated/admin users only)
-* Pagination and filtering support for blog listings
 
 ## Technologies Used
 
