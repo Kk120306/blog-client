@@ -20,7 +20,7 @@ const Hero = () => {
             className="relative bg-cover bg-center h-[50vh] flex items-center justify-center text-white"
             style={{ backgroundImage: `url(${HomeBg})` }}
         >
-            <div className="absolute inset-0 bg-black/60 z-0" />
+            <div className="absolute inset-0 bg-black/80 z-0" />
 
             <div className="relative z-10 text-center px-6 max-w-4xl flex flex-col items-center gap-8">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold drop-shadow-md leading-snug">

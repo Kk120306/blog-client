@@ -8,14 +8,17 @@ const Home = () => {
     const { data, loading, error } = useFetch('/home/blog?limit=3');
 
     return (
-        <div>
+        <div className="bg-[#121212] text-white min-h-screen">
             <Hero />
-            <div>
-                <h2 className="text-3xl font-bold text-center mt-8">Latest Posts</h2>
-                <p className="text-center mt-4">Discover the latest insights and trends in our blog.</p>
+
+            <section className="max-w-6xl mx-auto px-4 py-16">
+                <h2 className="text-4xl font-extrabold text-center mb-4 tracking-tight">Latest Posts</h2>
+                <p className="text-center text-gray-400 mb-12">
+                    Discover the latest insights and trends in our blog.
+                </p>
 
                 {loading && (
-                    <p className="font-semibold font-mono text-center mt-20">
+                    <p className="font-semibold font-mono text-center mt-20 text-lg">
                         Loading
                         <Typewriter
                             words={["..."]}
@@ -34,22 +37,32 @@ const Home = () => {
                 )}
 
                 {data?.posts?.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    <div
+                        className={`grid gap-8 ${data.posts.length === 1
+                                ? 'grid-cols-1 justify-items-center max-w-xs mx-auto'
+                                : data.posts.length === 2
+                                    ? 'grid-cols-2 justify-items-center max-w-2xl mx-auto'
+                                    : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                            }`}
+                    >
                         {data.posts.map((post, index) => (
                             <PostCard post={post} key={index} index={index} />
                         ))}
                     </div>
                 ) : (
-                    <div>
-                        <p className="text-center mt-8">No posts available.</p>
-                    </div>
+                    !loading && <p className="text-center text-gray-500 mt-8">No posts available.</p>
                 )}
-            </div>
-            <Link to="/posts">
-                <button>All Posts</button>
-            </Link>
+
+                <div className="flex justify-center mt-12">
+                    <Link to="/posts">
+                        <button className="mt-2 px-6 py-3 bg-white text-black text-lg font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition duration-300">
+                            View All Posts
+                        </button>
+                    </Link>
+                </div>
+            </section>
         </div>
     );
-}
+};
 
 export default Home;
