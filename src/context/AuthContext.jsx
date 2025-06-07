@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
         try {
             const response = await api.get("user/data");
             setUser(response.data.authorizedData);
+            console.log(user.role , "date")
             setIsAuthenticated(true);
         } catch (error) {
             if (error.response?.status !== 403) {

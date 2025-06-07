@@ -2,6 +2,7 @@ import Hero from './Hero';
 import useFetch from '../utils/useFetch';
 import { Typewriter } from 'react-simple-typewriter';
 import PostCard from './PostCard';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const { data, loading, error } = useFetch('/home/blog?limit=3');
@@ -32,9 +33,9 @@ const Home = () => {
                     </p>
                 )}
 
-                {data?.post?.length > 0 ? (
+                {data?.posts?.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                        {data.post.map((post, index) => (
+                        {data.posts.map((post, index) => (
                             <PostCard post={post} key={index} index={index} />
                         ))}
                     </div>
@@ -44,6 +45,9 @@ const Home = () => {
                     </div>
                 )}
             </div>
+            <Link to="/posts">
+                <button>All Posts</button>
+            </Link>
         </div>
     );
 }
