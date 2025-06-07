@@ -9,7 +9,7 @@ const Footer = () => {
 
                 <div className="border-l-4 h-14 pl-3">
                     <h3 className="text-lg font-bold">Blog</h3>
-                    <p className="text-sm mt-1">Insights<span className="font-bold text-blue-400">.</span></p>
+                    <p className="text-sm mt-1">Insights<span className="font-bold text-orange-400">.</span></p>
                 </div>
 
 

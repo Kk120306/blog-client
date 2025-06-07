@@ -81,10 +81,10 @@ const Comments = ({ user, post }) => {
                                 key={index}
                                 className="border-l-4 pl-4 border-blue-200"
                             >
-                                <p className="text-gray-700">
+                                <p className="text-gray-200">
                                     <strong>{comment.name}</strong> says:
                                 </p>
-                                <p className="text-gray-600">
+                                <p className="text-gray-400">
                                     {comment.message}
                                 </p>
                             </div>

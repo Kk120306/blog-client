@@ -16,7 +16,7 @@ function App() {
                 </main>
             </AuthProvider>
             <Footer />
-            <Toaster position="top-right" richColors />
+            <Toaster position="top-center" theme='dark' richColors />
             {/* TODO : modify position and style */}
         </div>
     )

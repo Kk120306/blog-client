@@ -10,7 +10,7 @@ const Hero = () => {
 
     useEffect(() => {
         if (isAuthenticated && user) {
-            const timer = setTimeout(() => setShowName(true), 1700); 
+            const timer = setTimeout(() => setShowName(true), 1700);
             return () => clearTimeout(timer);
         }
     }, [isAuthenticated, user]);
@@ -52,7 +52,8 @@ const Hero = () => {
 
                 {isAuthenticated && (
                     <Link to="/create">
-                        <button className="mt-2 px-6 py-3 bg-white text-black text-lg font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition duration-300">
+                        <button className="mt-2 px-6 py-3 bg-white text-black text-lg font-semibold rounded-xl shadow-lg hover:bg-black hover:text-white hover:scale-90 
+                        transition duration-300">
                             Create New Post
                         </button>
                     </Link>
