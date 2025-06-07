@@ -16,7 +16,6 @@ const About = () => {
                     Our team is made up of curious minds — from seasoned writers to everyday enthusiasts — who love diving into a wide range of topics, from technology and productivity to creativity and lifestyle.
                 </p>
 
-                {/* Developed By Section */}
                 <div className="flex items-center justify-center gap-2 text-gray-300 text-md mt-10">
                     <span>Developed by</span>
                     <a
