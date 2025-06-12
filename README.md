@@ -4,6 +4,7 @@ A React-based frontend client for the blogging platform, designed to interact se
 
 * **Backend Repository**: *(https://github.com/Kk120306/blogAPI)*
 * **Live Demo**: *(https://bloginsights-kk120306.netlify.app/)*
+* Server no longer live - fetching from api will send error 
 
 ## Features
 
